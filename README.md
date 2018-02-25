@@ -35,7 +35,8 @@ The keywords you searched will be highlighted and the entire line will have a ou
 
 # - Gallery -
 ![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo1.png)
-Format: ![Alt Text](url)
+<img src="(https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo1.png" width="256" height="256" title="Github Logo">
+
 ![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo2.png)
 ![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo3.png)
 ![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/multiLingual.png)
