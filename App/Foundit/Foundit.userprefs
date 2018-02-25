@@ -1,0 +1,35 @@
+﻿<Properties StartupConfiguration="{9392C295-D0F3-4F82-AE28-4DF518787978}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Foundit/MainActivity.cs">
+    <Files>
+      <File FileName="Foundit/BitmapHelpers.cs" Line="28" Column="48" />
+      <File FileName="Foundit/MainActivity.cs" Line="56" Column="23" />
+      <File FileName="Foundit/Resources/Resource.designer.cs" Line="1" Column="1" />
+      <File FileName="Foundit/Resources/values/Strings.xml" Line="4" Column="48" />
+      <File FileName="Foundit/Properties/AndroidManifest.xml" Line="7" Column="12" />
+    </Files>
+    <Pads>
+      <Pad Id="ProjectPad">
+        <State name="__root__">
+          <Node name="Foundit" expanded="True">
+            <Node name="Foundit" expanded="True">
+              <Node name="Assets" expanded="True" />
+              <Node name="Properties" expanded="True" />
+              <Node name="Resources" expanded="True">
+                <Node name="layout" expanded="True" />
+                <Node name="values" expanded="True" />
+              </Node>
+              <Node name="MainActivity.cs" selected="True" />
+            </Node>
+          </Node>
+        </State>
+      </Pad>
+    </Pads>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.ItemProperties.Foundit AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Android_Accelerated_Nougat" />
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+</Properties>

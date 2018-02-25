@@ -8,6 +8,8 @@ import android.os.Handler;
 import android.view.MotionEvent;
 import android.view.View;
 
+//import Vision.TextDetection;
+
 /**
  * An example full-screen activity that shows and hides the system UI (i.e.
  * status bar and navigation/system bar) with user interaction.
@@ -150,6 +152,15 @@ public class FullscreenActivity extends AppCompatActivity {
         // Schedule a runnable to display UI elements after a delay
         mHideHandler.removeCallbacks(mHidePart2Runnable);
         mHideHandler.postDelayed(mShowPart2Runnable, UI_ANIMATION_DELAY);
+
+
+        //java.io.PrintStream p = new PrintStream(out, autoFlush);
+        //String fk = "https://upload.wikimedia.org/wikipedia/commons/a/af/Chrome-512.png";
+//        try {
+//            TextDetection.detectTextGcs(fk);
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
     }
 
     /**
