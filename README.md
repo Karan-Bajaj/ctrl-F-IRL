@@ -11,7 +11,7 @@ For the future, we would like to improve the algorithm so we can read smaller te
 
 # Link to Presentation:
 
-> Google drive link: goo.gl/xJdNYr
+> Google drive link: https://drive.google.com/file/d/1ZS1gbRCCrziGNa6Gc6FpSgNyO4eNtWk6/view?usp=sharing
 
 or
 
