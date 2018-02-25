@@ -35,10 +35,10 @@ The keywords you searched will be highlighted and the entire line will have a ou
 
 # - Gallery -
 ![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo1.png| width=100)
-![Demo1](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo2.png| width=100)
-![Demo2](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo3.png| width=100)
-![Demo3](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/multiLingual.png| width=100)
-![Demo4](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/MindMap.png| width=100)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo2.png| width=100)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo3.png| width=100)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/multiLingual.png| width=100)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/MindMap.png| width=100)
 
 
 
