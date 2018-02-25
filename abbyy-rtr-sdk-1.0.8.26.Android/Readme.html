@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>ABBYY Real-Time Recognition SDK 1</title>
+   <meta http-equiv="Content-Type" content="text/html; charset=<%DOCCHARSET%>">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <style type="text/css">
+     body {font-size:16px; font-family:'Segoe UI',Tahoma,Verdana,Arial,sans-serif; color:#424650; margin:30px; background:#FFFFFF}
+     h1 {font-size:27px; color:#c60c30; font-weight:normal}
+     h2 {font-size:24px; font-weight:normal}
+     h3 {font-size:21px; color:#768693; font-weight:normal}
+     h4 {font-weight:600}
+     p {margin: 7px 0px 7px 0px}
+   </style>
+</head>
+<body>
+<h1>ABBYY Real-Time Recognition SDK 1 (build 1.0.8.26)</h1>
+<ol>
+<li><a href="#about" class="topiclink">About ABBYY Real-Time Recognition SDK 1</a></li>
+<li><a href="#requirements" class="topiclink">System Requirements</a></li>
+<li><a href="#help" class="topiclink">More Documentation</a></li>
+<li><a href="#samples" class="topiclink">Getting Started: Code Samples</a></li>
+<li><a href="#copyrights" class="topiclink">Copyright and Trademark Notices</a></li>
+</ol>
+<h2><a id="about"></a>About ABBYY Real-Time Recognition SDK 1</h2>
+<p>ABBYY Real-Time Recognition SDK (a software development kit) provides a technology for recognizing text directly on the smartphone's camera preview screen. </p>
+<p>The library is supplied as an AAR file, together with the resources to support different languages of the text.</p>
+<h2><a id="requirements"></a>System Requirements</h2>
+<h3>Supported Operating Systems</h3>
+<p>Android 4.4 and later for ARMv7 processors</p>
+<h3>Processor capabilities</h3>
+<ul>
+<li>A multi-core processor (augmented reality scenarios require <strong>4</strong> cores)</li>
+<li>Advanced SIMD (NEON)</li>
+</ul>
+<h3>Memory requirements</h3>
+<p>Library operation in text capture scenario takes up:</p>
+<ul>
+<li>for texts in alphabetic languages — <strong>40</strong> MB RAM</li>
+<li>for texts in Chinese, Japanese, or Korean languages — <strong>70</strong> MB RAM</li>
+</ul>
+<h3>Camera requirements</h3>
+<ul>
+<li>Autofocus lens</li>
+<li>HD preview: generally recommended frame size is <strong>720&#215;1280</strong>, but it can vary depending on the scenario and processing speed</li>
+</ul>
+<h3>Permissions required</h3>
+<p>With the current license, your application needs an Internet connection to gather the information about the current state of the library. Include the following line into your <strong>AndroidManifest.xml</strong>:</p>
+<pre>
+<span style="color: #0000ff;">&lt;</span><span style="font-weight: bold; color: #800000;">uses-permission</span><span style="color: #000000;">&nbsp;</span><span style="color: #800000;">android:name</span><span style="color: #0000ff;">=&quot;</span><span style="font-weight: bold; color: #000080;">android.permission.INTERNET</span><span style="color: #0000ff;">&quot;</span><span style="color: #000000;">&nbsp;</span><span style="color: #0000ff;">/&gt;</span>
+</pre>
+<p>If the application was not able to connect to the Internet for 90 days, the library will not be available until the connection is reinstated. To remove this limitation, please <a href="http://rtrsdk.com:80/contacts/?downloadId=ac74b057190146d4a2e0ab55385a658c" target="_blank" class="weblink">contact sales</a>.</p>
+<p>Your application should have permission to access the Internet, and the smartphone should be connected to the Internet while using the library.</p>
+<h2><a id="help"></a>More Documentation</h2>
+<p>See the quick start guide, full description of the API and other useful information about the product on <a href="http://rtrsdk.com:80/documentation/?downloadId=ac74b057190146d4a2e0ab55385a658c" target="_blank" class="weblink">our website</a>.</p>
+<h2><a id="samples"></a>Getting Started: Code Samples</h2>
+<p>The distribution pack includes code samples in Java, which demonstrate simple implementations of the basic scenarios and can help you start developing your own application. The code samples can be found in the <strong><a href="sample-datacapture" class="filelink">sample-datacapture</a></strong>, <strong><a href="sample-textcapture" class="filelink">sample-textcapture</a></strong> folders. All you need to start using the samples can be found <a href="http://rtrsdk.com:80/documentation/android-quick-start-guide/?downloadId=ac74b057190146d4a2e0ab55385a658c" target="_blank" class="weblink">here</a>.</p>
+<h2><a id="copyrights"></a>Copyright and Trademark Notices</h2>
+<p>ABBYY® Real-Time Recognition SDK 1 © 2016 ABBYY Production LLC. <br>
+ABBYY is either a registered trademark or a trademark of ABBYY Software Ltd.<br>
+<span style="text-decoration: underline;">Working with JPEG image format:</span><br>
+This software is based in part on the work of the Independent JPEG Group.<br>
+<span style="text-decoration: underline;">All other trademarks and copyrights are the property of their respective owners.</span></p>
+</body>
+</html>
