@@ -19,6 +19,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.preference.PreferenceManager;
+import android.text.Spannable;
 import android.util.Log;
 import android.view.Display;
 import android.view.Surface;
@@ -53,7 +54,7 @@ public class MainActivity extends Activity {
 	private static final int cameraZoom = 1;
 	// The default behavior in this sample is to start recognition when application is started or
 	// resumed. You can turn off this behavior or remove it completely to simplify the application
-	private static final boolean startRecognitionOnAppStart = true;
+	private static final boolean startRecognitionOnAppStart = false;
 	// Area of interest specified through margin sizes relative to camera preview size
 	private static final int areaOfInterestMargin_PercentOfWidth = 4;
 	private static final int areaOfInterestMargin_PercentOfHeight = 25;
@@ -103,7 +104,7 @@ public class MainActivity extends Activity {
 
 	// Text displayed on start button
 	private static final String BUTTON_TEXT_START = "Start";
-	private static final String BUTTON_TEXT_STOP = "Stop";
+	private static final String BUTTON_TEXT_STOP = "PAUSE";
 	private static final String BUTTON_TEXT_STARTING = "Starting...";
 	private static String keyInput = "";
 
@@ -285,6 +286,17 @@ public class MainActivity extends Activity {
 			}
 		}
 	};
+
+//	private EditText.OnClickListener keyEnterClickListener = new View.OnClickListener() {
+//		@Override public void onClick( View v )
+//		{
+//			// if BUTTON_TEXT_STARTING autofocus is already in progress, it is incorrect to interrupt it
+//			if( SearchKey_USER.isFocused() ) {
+//				startRecognitionWhenReady = false;
+//			}
+//		}
+//	};
+
 
 	private void onAutoFocusFinished( boolean success, Camera camera )
 	{
@@ -710,6 +722,7 @@ public class MainActivity extends Activity {
 		} );
 	}
 
+
 	// The 'Start' and 'Stop' button
 	public void onStartButtonClick( View view )
 	{
@@ -764,6 +777,7 @@ public class MainActivity extends Activity {
 		}
 
 		layout.setOnClickListener( clickListener );
+		//layout.setOnClickListener(keyEnterClickListener);
 	}
 
 	@Override
@@ -771,7 +785,7 @@ public class MainActivity extends Activity {
 	{
 		super.onResume();
 		// Reinitialize the camera, restart the preview and recognition if required
-		startButton.setEnabled( false );
+		startButton.setEnabled( !startRecognitionOnAppStart );
 		clearRecognitionResults();
 		startRecognitionWhenReady = startRecognitionOnAppStart;
 		camera = Camera.open();
@@ -808,21 +822,32 @@ public class MainActivity extends Activity {
 		private int scaleDenominatorY = 1;
 		private Paint textPaint;
 		private Paint lineBoundariesPaint;
+		private Paint ConfidencePaint;
+		private Paint highlighterPaint;
 		private Paint backgroundPaint;
 		private Paint areaOfInterestPaint;
+		private Paint innerAreaOfInterestPaint;
 
 		public SurfaceViewWithOverlay( Context context )
 		{
 			super( context );
 			this.setWillNotDraw( false );
-
+			ConfidencePaint = new Paint();
+			ConfidencePaint.setStyle(Paint.Style.FILL);
 			lineBoundariesPaint = new Paint();
-			lineBoundariesPaint.setStyle( Paint.Style.STROKE );
-			lineBoundariesPaint.setARGB( 255, 128, 128, 128 );
+			highlighterPaint = new Paint();
+			lineBoundariesPaint.setStyle( Paint.Style.STROKE);
+			lineBoundariesPaint.setStrokeWidth(3);
+			highlighterPaint.setStyle(Paint.Style.FILL);
+			highlighterPaint.setARGB( 80, 255, 255, 0 );
 			textPaint = new Paint();
+			textPaint.setARGB( 120, 255, 255, 0 );
 			areaOfInterestPaint = new Paint();
 			areaOfInterestPaint.setARGB( 100, 0, 0, 0 );
 			areaOfInterestPaint.setStyle( Paint.Style.FILL );
+			innerAreaOfInterestPaint = new Paint();
+			innerAreaOfInterestPaint.setStyle( Paint.Style.STROKE );
+			innerAreaOfInterestPaint.setARGB( 255, 128, 128, 128 );
 		}
 
 		public void setScaleX( int nominator, int denominator )
@@ -878,22 +903,28 @@ public class MainActivity extends Activity {
 				}
 				switch( resultStatus ) {
 					case NotReady:
-						textPaint.setARGB( 255, 128, 0, 0 );
+						lineBoundariesPaint.setARGB( 255, 128, 0, 0 );
+						ConfidencePaint.setARGB( 255, 128, 0, 0 );
 						break;
 					case Tentative:
-						textPaint.setARGB( 255, 128, 0, 0 );
+						lineBoundariesPaint.setARGB( 255, 128, 0, 0 );
+						ConfidencePaint.setARGB( 255, 128, 0, 0 );
 						break;
 					case Verified:
-						textPaint.setARGB( 255, 128, 64, 0 );
+						lineBoundariesPaint.setARGB( 255, 128, 64, 0 );
+						ConfidencePaint.setARGB( 255, 128, 64, 0 );
 						break;
 					case Available:
-						textPaint.setARGB( 255, 128, 128, 0 );
+						lineBoundariesPaint.setARGB( 255, 128, 128, 0 );
+						ConfidencePaint.setARGB( 255, 128, 128, 0 );
 						break;
 					case TentativelyStable:
-						textPaint.setARGB( 255, 64, 128, 0 );
+						lineBoundariesPaint.setARGB( 255, 64, 128, 0 );
+						ConfidencePaint.setARGB( 255, 64, 128, 0 );
 						break;
 					case Stable:
-						textPaint.setARGB( 255, 0, 128, 0 );
+						lineBoundariesPaint.setARGB( 255, 0, 128, 0 );
+						ConfidencePaint.setARGB( 255, 0, 128, 0 );
 						break;
 				}
 				stability = resultStatus.ordinal();
@@ -912,6 +943,7 @@ public class MainActivity extends Activity {
 			super.onDraw( canvas );
 			int width = canvas.getWidth();
 			int height = canvas.getHeight();
+			String kwyinput_copy = keyInput;
 			canvas.save();
 			// If there is any result
 			if( lines != null ) {
@@ -930,7 +962,7 @@ public class MainActivity extends Activity {
 				canvas.drawRect( 0, bottom, width, height, areaOfInterestPaint );
 				canvas.drawRect( 0, top, left, bottom, areaOfInterestPaint );
 				canvas.drawRect( right, top, width, bottom, areaOfInterestPaint );
-				canvas.drawRect( left, top, right, bottom, lineBoundariesPaint );
+				canvas.drawRect( left, top, right, bottom, innerAreaOfInterestPaint );
 				canvas.clipRect( left, top, right, bottom );
 			}
 			// If there is any result
@@ -972,15 +1004,24 @@ public class MainActivity extends Activity {
 					textPaint.setTextSize( (float) yskew );
 					String line = lines[i];
 					Rect textBounds = new Rect();
-					textPaint.getTextBounds( lines[i], 0, line.length(), textBounds );
+					Rect textFrontBound = new Rect();
+					Rect textmidBound = new Rect();
+					int indBegin = lines[i].indexOf(kwyinput_copy, 0);
+					textPaint.getTextBounds( line, 0, line.length(), textBounds );
+					textPaint.getTextBounds( line, 0, indBegin, textFrontBound );
+					textPaint.getTextBounds( kwyinput_copy, 0, kwyinput_copy.length(), textmidBound );
+
 					double xscale = Math.sqrt( sqrLength2 ) / textBounds.width();
 
 					canvas.translate( p0.x, p0.y );
+
 					canvas.rotate( (float) angle );
 					canvas.skew( -(float) ( xskew / yskew ), 0.0f );
 					canvas.scale( (float) xscale, 1.0f );
 
-					canvas.drawText( lines[i], 0, 0, textPaint );
+					canvas.drawRect( textFrontBound.width(),0,  textFrontBound.width()+ textmidBound.width(),-textmidBound.height()-2, highlighterPaint );
+
+					canvas.drawText( line, 0, 0, textPaint );
 					canvas.restore();
 				}
 			}
@@ -989,10 +1030,10 @@ public class MainActivity extends Activity {
 			// Draw the 'progress'
 			if( stability > 0 ) {
 				int r = width / 50;
-				int y = height - 175 - 2 * r;
+				int y = height - 400 - 2 * r;
 				for( int i = 0; i < stability; i++ ) {
 					int x = width / 2 + 3 * r * ( i - 2 );
-					canvas.drawCircle( x, y, r, textPaint );
+					canvas.drawCircle( x, y, r, ConfidencePaint);
 				}
 			}
 		}

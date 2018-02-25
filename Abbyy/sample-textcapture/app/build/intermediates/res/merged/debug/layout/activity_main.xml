@@ -56,5 +56,7 @@
         android:layout_centerHorizontal="true"
         android:ems="10"
         android:hint="Enter your keywords"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:selectAllOnFocus="false"
+        android:textAlignment="center" />
 </RelativeLayout>

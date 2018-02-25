@@ -1,27 +1,27 @@
 [
     {
-        "merged": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
-        "source": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/select_dialog_singlechoice_material.xml"
-    },
-    {
         "merged": "/Users/jackxu/Projects/HV/abbyy-rtr-sdk-1.0.8.26.Android/sample-textcapture/app/build/intermediates/res/merged/debug/layout/support_simple_spinner_dropdown_item.xml",
         "source": "/Users/jackxu/Projects/HV/abbyy-rtr-sdk-1.0.8.26.Android/sample-textcapture/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/support_simple_spinner_dropdown_item.xml"
+    },
+    {
+        "merged": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/res/merged/debug/layout/select_dialog_singlechoice_material.xml",
+        "source": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/select_dialog_singlechoice_material.xml"
     },
     {
         "merged": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/res/merged/debug/layout/abc_action_bar_title_item.xml",
         "source": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_bar_title_item.xml"
     },
     {
-        "merged": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
-        "source": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_expanded_menu_layout.xml"
+        "merged": "/Users/jackxu/Projects/HV/abbyy-rtr-sdk-1.0.8.26.Android/sample-textcapture/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
+        "source": "/Users/jackxu/Projects/HV/abbyy-rtr-sdk-1.0.8.26.Android/sample-textcapture/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_bar_view_list_nav_layout.xml"
     },
     {
         "merged": "/Users/jackxu/Projects/HV/abbyy-rtr-sdk-1.0.8.26.Android/sample-textcapture/app/build/intermediates/res/merged/debug/layout/abc_action_menu_layout.xml",
         "source": "/Users/jackxu/Projects/HV/abbyy-rtr-sdk-1.0.8.26.Android/sample-textcapture/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_menu_layout.xml"
     },
     {
-        "merged": "/Users/jackxu/Projects/HV/abbyy-rtr-sdk-1.0.8.26.Android/sample-textcapture/app/build/intermediates/res/merged/debug/layout/abc_action_bar_view_list_nav_layout.xml",
-        "source": "/Users/jackxu/Projects/HV/abbyy-rtr-sdk-1.0.8.26.Android/sample-textcapture/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_action_bar_view_list_nav_layout.xml"
+        "merged": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/res/merged/debug/layout/abc_expanded_menu_layout.xml",
+        "source": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/exploded-aar/com.android.support/appcompat-v7/23.1.1/res/layout/abc_expanded_menu_layout.xml"
     },
     {
         "merged": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/res/merged/debug/layout/abc_activity_chooser_view.xml",
