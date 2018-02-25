@@ -118,11 +118,7 @@ public class MainActivity extends Activity {
 			if (length == 0)
 				return true;
 
-			for (int i = str.length() - length; i >= 0; i--) {
-				if (str.regionMatches(true, i, searchStr, 0, length))
-					return true;
-			}
-			return false;
+			return str.toLowerCase().contains(searchStr.toLowerCase());
 		}
 
 		@Override
@@ -287,15 +283,14 @@ public class MainActivity extends Activity {
 		}
 	};
 
-//	private EditText.OnClickListener keyEnterClickListener = new View.OnClickListener() {
-//		@Override public void onClick( View v )
-//		{
-//			// if BUTTON_TEXT_STARTING autofocus is already in progress, it is incorrect to interrupt it
-//			if( SearchKey_USER.isFocused() ) {
-//				startRecognitionWhenReady = false;
-//			}
-//		}
-//	};
+	private EditText.OnClickListener keyEnterClickListener = new EditText.OnClickListener() {
+		@Override public void onClick( View v )
+		{
+			if( startButton.getText().equals( BUTTON_TEXT_STOP ) ) {
+				stopRecognition();
+			}
+		}
+	};
 
 
 	private void onAutoFocusFinished( boolean success, Camera camera )
@@ -777,7 +772,8 @@ public class MainActivity extends Activity {
 		}
 
 		layout.setOnClickListener( clickListener );
-		//layout.setOnClickListener(keyEnterClickListener);
+		SearchKey_USER.setOnClickListener(keyEnterClickListener);
+
 	}
 
 	@Override
@@ -1006,23 +1002,28 @@ public class MainActivity extends Activity {
 					Rect textBounds = new Rect();
 					Rect textFrontBound = new Rect();
 					Rect textmidBound = new Rect();
-					int indBegin = lines[i].indexOf(kwyinput_copy, 0);
-					textPaint.getTextBounds( line, 0, line.length(), textBounds );
-					textPaint.getTextBounds( line, 0, indBegin, textFrontBound );
-					textPaint.getTextBounds( kwyinput_copy, 0, kwyinput_copy.length(), textmidBound );
+					int indBegin = line.toLowerCase().indexOf(kwyinput_copy.toLowerCase(), 0);
+					if(indBegin>=0 && indBegin<line.length())
+					{
+						textPaint.getTextBounds( line, 0, line.length(), textBounds );
+						textPaint.getTextBounds( line, 0, indBegin, textFrontBound );
+						textPaint.getTextBounds( kwyinput_copy, 0, kwyinput_copy.length(), textmidBound );
 
-					double xscale = Math.sqrt( sqrLength2 ) / textBounds.width();
+						double xscale = Math.sqrt( sqrLength2 ) / textBounds.width();
 
-					canvas.translate( p0.x, p0.y );
+						canvas.translate( p0.x, p0.y );
 
-					canvas.rotate( (float) angle );
-					canvas.skew( -(float) ( xskew / yskew ), 0.0f );
-					canvas.scale( (float) xscale, 1.0f );
+						canvas.rotate( (float) angle );
+						canvas.skew( -(float) ( xskew / yskew ), 0.0f );
+						canvas.scale( (float) xscale, 1.0f );
 
-					canvas.drawRect( textFrontBound.width(),0,  textFrontBound.width()+ textmidBound.width(),-textmidBound.height()-2, highlighterPaint );
+						canvas.drawRect( textFrontBound.width(),0,  textFrontBound.width()+ textmidBound.width(),-textmidBound.height(), highlighterPaint );
 
-					canvas.drawText( line, 0, 0, textPaint );
+						canvas.drawText( line, 0, 0, textPaint );
+					}
 					canvas.restore();
+
+
 				}
 			}
 			canvas.restore();
