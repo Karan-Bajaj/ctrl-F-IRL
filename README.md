@@ -21,10 +21,16 @@ PDF link: https://goo.gl/NNRKdr
 
 Instructions to run: 
 -Tap on the app icon through your homepage
+
 -Select the desired language from the dropdown menu on the top right
+
 -Type the word you would like to search for into the “Enter your keywords” textbox
+
 -Aim the camera towards the text you would like to search
+
 -Tap “Start”
+
 -Move your camera closer or farther away from the text based on the confidence level bar and the warning in the top left 
 The keywords you searched will be highlighted and the entire line will have a outline for context 
+
 -You just performed a Ctrl-F in real life!
