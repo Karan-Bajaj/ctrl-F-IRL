@@ -20,6 +20,7 @@ PDF link: https://goo.gl/NNRKdr
 
 
 Instructions to run: 
+
 -Tap on the app icon through your homepage
 
 -Select the desired language from the dropdown menu on the top right
