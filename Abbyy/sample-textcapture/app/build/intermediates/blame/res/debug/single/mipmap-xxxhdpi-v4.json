@@ -1,0 +1,10 @@
+[
+    {
+        "merged": "/Users/jackxu/Projects/HV/abbyy-rtr-sdk-1.0.8.26.Android/sample-textcapture/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
+        "source": "/Users/jackxu/Projects/HV/abbyy-rtr-sdk-1.0.8.26.Android/sample-textcapture/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/build/intermediates/res/merged/debug/mipmap-xxxhdpi-v4/ic_launcher.png",
+        "source": "/Users/jackxu/Projects/HV/Abbyy/sample-textcapture/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    }
+]
