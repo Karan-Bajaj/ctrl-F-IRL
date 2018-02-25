@@ -29,6 +29,7 @@ import android.view.ViewGroup;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.RelativeLayout;
 import android.widget.Spinner;
 import android.widget.TextView;
@@ -96,6 +97,7 @@ public class MainActivity extends Activity {
 
 	// UI components
 	private Button startButton; // The start button
+	private EditText SearchKey_USER;
 	private TextView warningTextView; // Show warnings from recognizer
 	private TextView errorTextView; // Show errors from recognizer
 
@@ -103,9 +105,24 @@ public class MainActivity extends Activity {
 	private static final String BUTTON_TEXT_START = "Start";
 	private static final String BUTTON_TEXT_STOP = "Stop";
 	private static final String BUTTON_TEXT_STARTING = "Starting...";
+	private static String keyInput = "";
 
 	// To communicate with the Text Capture Service we will need this callback:
 	private ITextCaptureService.Callback textCaptureCallback = new ITextCaptureService.Callback() {
+
+		private boolean containsIgnoreCase(String str, String searchStr)     {
+			if(str == null || searchStr == null) return false;
+
+			final int length = searchStr.length();
+			if (length == 0)
+				return true;
+
+			for (int i = str.length() - length; i >= 0; i--) {
+				if (str.regionMatches(true, i, searchStr, 0, length))
+					return true;
+			}
+			return false;
+		}
 
 		@Override
 		public void onRequestLatestFrame( byte[] buffer )
@@ -125,9 +142,20 @@ public class MainActivity extends Activity {
 			// even after the service has been stopped while the calls queued to this thread (UI thread)
 			// are being processed. Just ignore these calls:
 			if( !stableResultHasBeenReached ) {
-				if( resultStatus.ordinal() >= 3 ) {
+				if( resultStatus.ordinal() >= 3 || resultStatus == ITextCaptureService.ResultStabilityStatus.Stable) {
 					// The result is stable enough to show something to the user
-					surfaceViewWithOverlay.setLines( lines, resultStatus );
+					ArrayList<ITextCaptureService.TextLine> line_filtered_list = new ArrayList<ITextCaptureService.TextLine>();
+
+					for(ITextCaptureService.TextLine content : lines)
+					{
+						if(containsIgnoreCase(content.Text, keyInput) && keyInput.compareTo("")!=1)
+						{
+							line_filtered_list.add(content);
+						}
+					}
+					ITextCaptureService.TextLine[] line_filtered_array = new ITextCaptureService.TextLine[line_filtered_list.size()];
+					System.arraycopy( line_filtered_list.toArray(), 0, line_filtered_array, 0, line_filtered_list.size() );
+					surfaceViewWithOverlay.setLines( line_filtered_array, resultStatus );
 				} else {
 					// The result is not stable. Show nothing
 					surfaceViewWithOverlay.setLines( null, ITextCaptureService.ResultStabilityStatus.NotReady );
@@ -137,16 +165,16 @@ public class MainActivity extends Activity {
 				// to take some action (zooming in, checking recognition language, etc.)
 				warningTextView.setText( warning != null ? warning.name() : "" );
 
-				if( resultStatus == ITextCaptureService.ResultStabilityStatus.Stable ) {
-					// Stable result has been reached. Stop the service
-					stopRecognition();
-					stableResultHasBeenReached = true;
-
-					// Show result to the user. In this sample we whiten screen background and play
-					// the same sound that is used for pressing buttons
-					surfaceViewWithOverlay.setFillBackground( true );
-					startButton.playSoundEffect( android.view.SoundEffectConstants.CLICK );
-				}
+//				if( resultStatus == ITextCaptureService.ResultStabilityStatus.Stable ) {
+//					// Stable result has been reached. Stop the service
+//					stopRecognition();
+//					stableResultHasBeenReached = true;
+//
+//					// Show result to the user. In this sample we whiten screen background and play
+//					// the same sound that is used for pressing buttons
+//					surfaceViewWithOverlay.setFillBackground( true );
+//					startButton.playSoundEffect( android.view.SoundEffectConstants.CLICK );
+//				}
 			}
 		}
 
@@ -690,6 +718,7 @@ public class MainActivity extends Activity {
 		} else {
 			clearRecognitionResults();
 			startButton.setEnabled( false );
+			keyInput = SearchKey_USER.getText().toString();
 			startButton.setText( BUTTON_TEXT_STARTING );
 			if( !isContinuousVideoFocusModeEnabled( camera ) ) {
 				autoFocus( startRecognitionCameraAutoFocusCallback );
@@ -709,6 +738,7 @@ public class MainActivity extends Activity {
 		warningTextView = (TextView) findViewById( R.id.warningText );
 		errorTextView = (TextView) findViewById( R.id.errorText );
 		startButton = (Button) findViewById( R.id.startButton );
+		SearchKey_USER = (EditText) findViewById(R.id.SearchKey_USER);
 
 		// Initialize the recognition language spinner
 		initializeRecognitionLanguageSpinner();

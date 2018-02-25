@@ -47,4 +47,14 @@
         android:background="#7d010000"
         android:layout_marginBottom="5dp"
         android:onClick="onStartButtonClick" />
+
+    <EditText
+        android:id="@+id/SearchKey_USER"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/startButton"
+        android:layout_centerHorizontal="true"
+        android:ems="10"
+        android:hint="Enter your keywords"
+        android:inputType="textPersonName" />
 </RelativeLayout>
