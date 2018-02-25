@@ -39,7 +39,7 @@ The keywords you searched will be highlighted and the entire line will have a ou
 ![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo2.png)
 ![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo3.png)
 ![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/multiLingual.png)
-![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/MindMap.png)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/MindMap.jpg)
 
 
 
