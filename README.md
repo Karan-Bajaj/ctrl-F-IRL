@@ -2,7 +2,7 @@
 We have created a live camera feed app that utilizes a real-time text recognition SDK to perform a “Ctrl-F” in real life. The goal was to create a tool that could perform searches with a faster runtime than our own eyes. Once the user types into the textfield which keyword they are looking for, the app finds that word in the text the camera is pointed at and highlights that word over it in real-time. The rest of that sentence that includes the keyword is boxed to provide context for the user. This app supports 12 different languages. 
 
 For the future, we would like to improve the algorithm so we can read smaller text and remove the slight delay as well as implement it on iOS. In addition, one of our use cases was to use this for messy handwritten notes. We created several samples using and Azure and Google API which are able to read messy handwriting, however it was much slower so we proceeded with ABBYY which is offline. 
-
+## HackTheValley 2018 
 
 # Hardware devices, frameworks or tools used in the project:
 -Android Studio 
