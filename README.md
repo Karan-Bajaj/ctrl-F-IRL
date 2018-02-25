@@ -9,7 +9,8 @@ The hardware devices, frameworks or tools you have used in the project:
 -ABBYY Mobile OCR - real-time recognition SDK
 
 
-Link to Presentation: 
+Link to Presentation:
+
 Google drive link: goo.gl/xJdNYr
 
 or
