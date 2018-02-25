@@ -8,7 +8,6 @@ For the future, we would like to improve the algorithm so we can read smaller te
 -Android Studio 
 -ABBYY Mobile OCR - real-time recognition SDK
 
-
 # Link to Presentation:
 
 > Google drive (PPT) link: https://goo.gl/sQXjLH
@@ -16,7 +15,6 @@ For the future, we would like to improve the algorithm so we can read smaller te
 or
 
 > PDF link: https://goo.gl/NNRKdr 
-
 
 # Instructions to run: 
 
@@ -34,3 +32,14 @@ or
 The keywords you searched will be highlighted and the entire line will have a outline for context 
 
 7. You just performed a Ctrl-F in real life!
+
+# - Gallery -
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo1.png)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo2.png)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo3.png)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/multiLingual.png)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/MindMap.png)
+
+
+
+
