@@ -835,9 +835,9 @@ public class MainActivity extends Activity {
 			lineBoundariesPaint.setStyle( Paint.Style.STROKE);
 			lineBoundariesPaint.setStrokeWidth(3);
 			highlighterPaint.setStyle(Paint.Style.FILL);
-			highlighterPaint.setARGB( 80, 255, 255, 0 );
+			highlighterPaint.setARGB( 120, 255, 255, 0 );
 			textPaint = new Paint();
-			textPaint.setARGB( 120, 255, 255, 0 );
+			textPaint.setARGB( 50, 255, 255, 0 );
 			areaOfInterestPaint = new Paint();
 			areaOfInterestPaint.setARGB( 100, 0, 0, 0 );
 			areaOfInterestPaint.setStyle( Paint.Style.FILL );
@@ -1017,7 +1017,7 @@ public class MainActivity extends Activity {
 						canvas.skew( -(float) ( xskew / yskew ), 0.0f );
 						canvas.scale( (float) xscale, 1.0f );
 
-						canvas.drawRect( textFrontBound.width(),0,  textFrontBound.width()+ textmidBound.width(),-textmidBound.height(), highlighterPaint );
+						canvas.drawRect( textFrontBound.width(),0,  textFrontBound.width()+ textmidBound.width(),-textmidBound.height()-20, highlighterPaint );
 
 						canvas.drawText( line, 0, 0, textPaint );
 					}
