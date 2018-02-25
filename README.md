@@ -4,7 +4,7 @@ We have created a live camera feed app that utilizes a real-time text recognitio
 For the future, we would like to improve the algorithm so we can read smaller text and remove the slight delay as well as implement it on iOS. In addition, one of our use cases was to use this for messy handwritten notes. We created several samples using and Azure and Google API which are able to read messy handwriting, however it was much slower so we proceeded with ABBYY which is offline. 
 
 ## Tags:
-@Hackathon Project: ### HackTheValley 2018 
+### @Hackathon Project:  HackTheValley 2018 
 
 # Hardware devices, frameworks or tools used in the project:
 -Android Studio 
