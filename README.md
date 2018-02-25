@@ -6,8 +6,9 @@ For the future, we would like to improve the algorithm so we can read smaller te
 
 
 # Hardware devices, frameworks or tools used in the project:
--Android Studio 
--ABBYY Mobile OCR - real-time recognition SDK
+- Android Studio 
+- ABBYY Mobile OCR 
+- real-time recognition SDK
 
 # Link to Presentation:
 
