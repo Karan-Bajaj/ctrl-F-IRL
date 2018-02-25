@@ -1,3 +1,4 @@
+![Cover](https://github.com/JXproject/ctrl-F-IRL/blob/master/Gallery/Cover.png)
 # Project Description: 
 We have created a live camera feed app that utilizes a real-time text recognition SDK to perform a “Ctrl-F” in real life. The goal was to create a tool that could perform searches with a faster runtime than our own eyes. Once the user types into the textfield which keyword they are looking for, the app finds that word in the text the camera is pointed at and highlights that word over it in real-time. The rest of that sentence that includes the keyword is boxed to provide context for the user. This app supports 12 different languages. 
 
@@ -7,8 +8,9 @@ For the future, we would like to improve the algorithm so we can read smaller te
 ### @Hackathon:  HackTheValley 2018 
 
 # Hardware devices, frameworks or tools used in the project:
--Android Studio 
--ABBYY Mobile OCR - real-time recognition SDK
+- Android Studio 
+- ABBYY Mobile OCR 
+- real-time recognition SDK
 
 # Link to Presentation:
 
