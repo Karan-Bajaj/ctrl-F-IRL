@@ -34,11 +34,11 @@ The keywords you searched will be highlighted and the entire line will have a ou
 7. You just performed a Ctrl-F in real life!
 
 # - Gallery -
-![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo1.png | width=100)
-![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo2.png | width=100)
-![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo3.png | width=100)
-![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/multiLingual.png | width=100)
-![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/MindMap.png | width=100)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo1.png)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo2.png)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/Demo3.png)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/multiLingual.png)
+![Demo](https://github.com/Karan-Bajaj/ctrl-F-IRL/blob/master/Gallery/MindMap.png)
 
 
 
