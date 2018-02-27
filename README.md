@@ -6,7 +6,7 @@ For the future, we would like to improve the algorithm so we can read smaller te
 
 ## Tags:
 ### @Hackathon:  HackTheValley 2018 
-### @Author: Maya Gupta, Karan Bajaj, Emily Zeng, [Jack Xu](https://github.com/JXproject)
+### @Author: Maya Gupta, Karan Bajaj, [Emily Zeng](https://ezhxzeng.github.io/web_portfolio), [Jack Xu](https://github.com/JXproject)
 
 # Hardware devices, frameworks or tools used in the project:
 - Android Studio 
